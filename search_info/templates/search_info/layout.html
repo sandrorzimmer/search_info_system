@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}Search Info System{% endblock %}</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link href="{% static 'search_info/styles.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+        
+        {% block head %}
+        {% endblock %}
+    </head>
+    <body>
+
+        <nav class="nav mt-2 ms-2">
+            <a class="navbar-brand" href="{% url 'index' %}">Search Info System</a>
+            <div>
+              <ul class="nav mr-auto">
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="btn btn-primary me-1" href="#" role="button" id="link_new_info">New info</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-primary me-1" href="#" role="button" id="link_edit_tags">Edit tags</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><strong>{{ user.username }}</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Register</a>
+                    </li>
+                {% endif %}
+              </ul>
+            </div>
+        </nav>
+        
+        <div class="body">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

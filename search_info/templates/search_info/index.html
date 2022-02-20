@@ -1,0 +1,111 @@
+{% extends "search_info/layout.html" %}
+
+{% load static %}
+
+{% block head %}
+<script src="{% static 'search_info/script.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="container" id="container_search">
+        <div class="input-group mt-3 mb-3">
+            <input type="text" class="s_input_field form-control form-control-lg" id="input_search" placeholder="Search here" autofocus>
+            <button class="btn btn-outline-success" type="button" id="button_search">Search</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="s_block col-3" id="container_tags_search">
+            <div class="form-check">
+                <input class="btn-check" type="radio" name="tags_search" value="all" id="tag-all" checked>
+                <label class="btn btn-outline-primary mb-2" for="tag-all">ALL</label>
+            </div>
+            {% for tag in tags %}
+            <div class="form-check">              
+                <input class="btn-check" type="radio" name="tags_search" value="{{ tag.id }}" id="tag-{{ tag.id }}">
+                <label class="btn btn-outline-primary mb-2" for="tag-{{ tag.id }}">{{ tag.text }}</label>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="s_block col-3" id="container_tags_new_info">
+            <h4>Select your tags</h4>
+            {% for tag in tags %}
+            <input type="checkbox" class="btn-check tags_new_info" id="tag_{{ tag.id }}" name="tags_new_info" value="{{ tag.id }}">
+            <label class="btn btn-outline-primary mb-2" for="tag_{{ tag.id }}">{{ tag.text }}</label><br>
+            {% endfor %}
+        </div>
+
+        <div class="s_block col-3" id="container_edit_tags">
+            <div class="s_edit_tags row p-1">
+                <div class="input-group">
+                    <input type="text" class="s_input_field form-control" id="input_new_tag" placeholder="New tag">
+                    <button class="btn btn-success" type="button" id="button_save_new_tag">
+                        <i class="bi bi-check-lg"></i>
+                    </button>
+                </div>
+            </div>            
+            {% for tag in tags %}
+            <div class="s_edit_tags row m-2 p-1 border" id="edit_tags_tag_id_{{ tag.id }}">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="input_tags_list_{{ tag.id }}" value="{{ tag.text }}" disabled>
+                    <button class="btn-edit-tag btn" type="button" data-tag_id="{{ tag.id }}" data-tag_text="{{ tag.text }}">
+                        <i class="bi bi-pencil"></i>
+                    </button>
+                  </div>
+            </div>
+            {% endfor %}
+            <button type="button" class="btn-tags btn btn-primary btn-sm mt-3" id="button_ok_edit_tags">Ok</button>
+        </div>
+
+        <div class="col-9">
+            <div class="s_block container" id="container_result_search">
+
+            </div>
+            
+            <div class="s_block container" id="container_new_info">
+                <div class="mb-3">
+                    <input type="text" class="s_input_field form-control form-control-lg mb-3" id="input_new_info_title" placeholder="Title"></input>
+                    <textarea class="s_input_field form-control form-control-lg" id="ta_new_info_text" rows="15" placeholder="New info"></textarea>
+                </div>
+                <div class="d-grid gap-2 d-md-block" id="new_info_control">
+                    <button type="button" class="btn btn-success me-1" id="button_save_new_info">Save</button>
+                    <button type="button" class="btn btn-danger me-1" id="button_cancel_new_info">Cancel</button>
+                </div>
+            </div>
+            
+            <div class="s_block container" id="container_edit_info">
+                <div class="mb-3">
+                    <input type="text" class="s_input_field form-control form-control-lg mb-3" id="input_edit_info_title" placeholder="Title"></input>
+                    <textarea class="s_input_field form-control form-control-lg" id="ta_edit_info_text" rows="15">Edit info</textarea>
+                    <input class="s_input_field" type="hidden" id="edit_info_id">
+                    <input class="s_input_field" type="hidden" id="edit_info_tags_id">
+                </div>
+                <div class="d-grid gap-2 d-md-block" id="edit_info_control">
+                    <button type="button" class="btn btn-success me-1" id="button_save_edit_info">Save</button>
+                    <button type="button" class="btn btn-danger me-1" id="button_delete_info">Delete info</button>
+                    <button type="button" class="btn btn-danger me-1" id="button_cancel_edit_info">Cancel</button>
+                </div>
+            </div>
+
+            <div class="s_block save_edit_tags row m-2 p-1" id="container_edit_tag">
+                <div class="mb-3">
+                    <input type="text" class="s_input_field form-control mb-3" id="input_edit_tag">
+                    <input type="hidden" class="s_input_field form-control mb-3" id="input_edit_tag_id">
+                </div>
+                <div class="d-grid gap-2 d-md-block" id="edit_info_control">
+                    <button type="button" class="btn btn-success" id="button_save_edit_tag">Save</button>
+                    <button type="button" class="btn btn-danger" id="button_delete_tag">Delete tag</button>
+                    <button type="button" class="btn btn-danger" id="button_cancel_edit_tag">Cancel</button><div class="d-grid gap-2 d-md-block" id="edit_info_control"></div>
+                </div>
+            </div>
+
+            <div class="position-relative">
+                <div class="s_block alert position-absolute top-0 start-50 translate-middle" id="alert_box" role="alert">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
