@@ -8,7 +8,7 @@ I am currently working as a Safety Engineer. My work demands me writing papers a
 
 Intending to have a good standard and avoiding the hassle of remembering and writing many times the same piece of text, I came up with the idea of creating a system where I could easily save, find and copy pieces of text that are frequently written in my documents.
 
-To make an easier comprehension, from now on we call every piece of information stored in the system as "info".
+To make an easier comprehension, from now on we will call every piece of information stored in the system as "info".
 
 ## Distinctiveness and complexity
 
@@ -54,7 +54,7 @@ In order to make it work, we have to follow few steps:
 8. Log in with the user created.
 9. Start using the system. You can create your first tags and insert your first info. After that, you will be able to search for that information in the system.
 
-It is important to notice that evey user is only able to see his own information. If you store an info and log in with other user name, that info will not be visible. Each user is independent to manage his tags and infos.
+You can also refer to the file "requirements.txt" to check which packages were installed.
 
 ## Search
 
@@ -117,6 +117,10 @@ As explained above, deleting an info is possible clicking the Edit button and pr
 
 When users hover cursor over the info and its box becomes blue, we can notice that the cursor turns into a hand cursor. This means that there is an action possible over the box. If users click on the info box, the body text will be copied to the clipboard. Every time users click on an different info box, the clipboard content is updated to the last info clicked.
 
+## Users
+
+It is important to notice that evey user is only able to see his own information. If you store an info and log in with other user name, that info will not be visible. Each user is independent to manage his tags and infos.
+
 ## Future improvements
 
 There are always room to make a system better.
@@ -127,4 +131,4 @@ There are always room to make a system better.
 - Better layout for mobile screens.
 - Better position for alert box.
 - Make a color scheme to differ tags.
-- And probably many other improvements that we will come up with using the system.
+- And probably many other improvements that we will come up with while using the system.
