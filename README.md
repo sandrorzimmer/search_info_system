@@ -2,15 +2,13 @@
 
 ### Search Info System is intended to easily save and search pieces of information.
 
----
-
 ## Why did I develop this system?
 
 I am currently working as a Safety Engineer. My work demands me writing papers about safety evaluations in workplaces. Many times, these papers have very similar conclusions than others previously written. So, I have to write similar texts many times, in different documents.
 
 Intending to have a good standard and avoiding the hassle of remembering and writing many times the same piece of text, I came up with the idea of creating a system where I could easily save, find and copy pieces of text that are frequently written in my documents.
 
-To make an easier comprehension, from now on we call every piece of information as "info".
+To make an easier comprehension, from now on we call every piece of information stored in the system as "info".
 
 ## Distinctiveness and complexity
 
@@ -34,6 +32,13 @@ Copy text? Just click on the text.
 Simple like that.
 
 But, to all these features work properly, we have to program every response of the system. First, think about what your user need, later, tell your project how to do that.
+
+All features were thought to make users find info quickly and with only few clicks. For example:
+- When you arrive to the home page, focus is set to search field.
+- After a search, focus is back to search field, so you can quickly make a new search.
+- To perform a search, you can click on Search button or just press Enter on keyboard.
+- For a new search, just press Esc and you are ready to type a new keyword.
+- Once you have a list of infos, it is possible to scroll and click anyone you need to copy.
 
 ## How to run the application
 
@@ -62,9 +67,13 @@ Every info may have a title, a body and some tags.
 
 To do so, users just need to type a keyword in the search field and click on Search button or press Enter on keyboard. The result will be a list of all pieces of information with the specified keyword, both in the title or in the body text.
 
+![Search field](/images/search_field.png)
+
 ## Search using tags
 
 To restrict a search to a specific subject, users can select a tag and then type the keyword. The result will all pieces of info with the keyword and the selected tag. When “ALL” tag is selected, the system will return info from any tag, or even with no tag at all.
+
+![Tags](/images/tags.png)
 
 ## Tags
 
@@ -76,8 +85,11 @@ In order to create a new tag, click on “Edit tags”, type the new one in the 
 
 ## Edit tag
 
-
 To edit a tag, click on “Edit tags” and click on the pencil icon with the intended tag. A new field will appear, with the name of the tag. Edit the tag and click Save. The list of tags to be edited will be updated with the change. Pressing Ok button in the end of the list will save all changes and send user back to home page.
+
+![Edit tags](/images/edit_tags.png)
+
+![Editing a tag](/images/editing_tag.png)
 
 ## Delete tag
 
@@ -87,9 +99,15 @@ If users want to delete a tag, they just have to go to edit tags page, click in 
 
 To create a new info, users must click on “New info” button on the top of the page, type a title (or not, it is not mandatory) and a text for the info body. Press Save and it is created.
 
+![New info](/images/new_info.png)
+
 ## Edit Info
 
 When an info is shown, it comes inside a white box. If users hover the cursor over this box, it becomes blue and an Edit button is shown on right side, in the bottom. If users click on this button, they will be able to change info title or body and save it. It is also possible to delete that specific info pressing Delete info button and confirming the exclusion.
+
+![Edit info button](/images/edit_info_button.png)
+
+![Edit info](/images/edit_info.png)
 
 ## Delete Info
 
@@ -99,9 +117,14 @@ As explained above, deleting an info is possible clicking the Edit button and pr
 
 When users hover cursor over the info and its box becomes blue, we can notice that the cursor turns into a hand cursor. This means that there is an action possible over the box. If users click on the info box, the body text will be copied to the clipboard. Every time users click on an different info box, the clipboard content is updated to the last info clicked.
 
-## Search Info System users
-
-
-
 ## Future improvements
 
+There are always room to make a system better.
+
+- Better scrolling system for the list of info found after a search.
+- When you click on Edit button, that info is also coppied to clipboard (and it should not be this way).
+- Solve some issues with front-end when the screen is resized.
+- Better layout for mobile screens.
+- Better position for alert box.
+- Make a color scheme to differ tags.
+- And probably many other improvements that we will come up with using the system.
