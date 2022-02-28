@@ -13,6 +13,7 @@ To make an easier comprehension, from now on we will call every piece of informa
 ## Distinctiveness and complexity
 
 This project is designed in three main parts, as the majority of softwares: 
+
 - FRONT-END: this is what users will see and where they will interact with the system. It is clean and intuitive. It was designed using HTML 5, CSS 3, JavaScript and Bootstrap.
 - BACK-END: this is what happens behind the curtains. Every time a user search for information or add some new info or tag, Django will act using Python to access the database and read or write information. I used Django REST framework to build an web API to save and access data in the database in a safe and easy way.
 - DATABASE: this is where all data is stored. I used Django models to create tables to store users, infos and tags. These structures are related to each other in order to show only info that belongs to the current user and to relate info with tags.
@@ -34,11 +35,27 @@ Simple like that.
 But, to all these features work properly, we have to program every response of the system. First, think about what your user need, later, tell your project how to do that.
 
 All features were thought to make users find info quickly and with only few clicks. For example:
+
 - When you arrive to the home page, focus is set to search field.
 - After a search, focus is back to search field, so you can quickly make a new search.
 - To perform a search, you can click on Search button or just press Enter on keyboard.
 - For a new search, just press Esc and you are ready to type a new keyword.
 - Once you have a list of infos, it is possible to scroll and click anyone you need to copy.
+
+## What is contained in each file
+
+The files were created as follows:
+
+- requirements.txt - contains all packages installed to the system works.
+- script.js - contains the front-end script. Everything that happens when you click a button or type in a field will be processed by JavaScript contained in this file.
+- styles.css - this file contains some style configuration to help in front-end visual. Most of the visual part is done by using Bootstrap, but some small adjustment is done directly in this CSS file.
+- index.html - this is the home page os the system. Actually, this a single page application, where everything happens in the same page. The trick is showing/hidding blocks as long as you need them.
+- layout.html - this is the base of the home page, the basic layout. Over this layot, other pages can be developed.
+- login.html - the login page, where users can enter the system.
+- register.html - new users can create a new login to register and use the application by this page.
+- models.py - this is where we create Django models. In a simplified way, the tables that we used to store data in our database.
+- views.py - Django views, or the backend behind our system. This is where information is processed in the server side. In this case, the major work is done in an API created using Python in this file.
+- urls.py - Django urls, where we can find all the urls created for this application. For example, all the urls for the API used to save, modify, delete and recover data.
 
 ## How to run the application
 
