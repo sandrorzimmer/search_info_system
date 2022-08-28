@@ -1,0 +1,8 @@
+Abrir o caminho abaixo no terminal:
+C:\Users\sandr\Meu Drive\Documentos Sandro\IT\Harvard - CS50W\project_5\search
+
+Executar o comando:
+python manage.py runserver
+
+Abrir o endereço no navegador:
+http://127.0.0.1:8000/search_info/
